@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SimpleMagnifyingView'
   s.version          = '0.1.0'
-  s.summary          = 'SimpleMagnifyingView can be used as a magnifier as the one iOS providing. SwiftUI supported!'
+  s.summary          = '`SimpleMagnifyingView` is a SwiftUI view which can create a magnifier.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,11 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  `SimpleMagnifyingView` is a SwiftUI view which can create a magnifier with only a few lines.
+  You can customize the shape and the scale of the magnifier easily.
+  This view is truly useful for accessiblity.
                        DESC
 
   s.homepage         = 'https://github.com/Tomortec/SimpleMagnifyingView'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+   s.screenshots     = './screenshot.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tomortec' => 'everything@tomortec.com' }
   s.source           = { :git => 'https://github.com/Tomortec/SimpleMagnifyingView.git', :tag => s.version.to_s }
@@ -34,8 +36,4 @@ TODO: Add long description of the pod here.
   # s.resource_bundles = {
   #   'SimpleMagnifyingView' => ['SimpleMagnifyingView/Assets/*.png']
   # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

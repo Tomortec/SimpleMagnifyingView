@@ -6,18 +6,16 @@
 
 ![Banner](./screenshot.png)
 
-`SimpleMagnifyingView` is a SwiftUI view which can create a magnifier
-
-[中文说明](./README-zh.md)
+`SimpleMagnifyingView` 是用 SwiftUI 写的放大镜 🔍
 
 ![Demo](./demo.gif)
 ![Demo1](./demo-1.gif)
 
-## How it works
+## 原理
 
 ![HowItWorks](./how-it-works.png)
 
-## Example
+## 小示例
 
 ``` Swift
 MagnifierView(isMagnifying: $isMagnifying, scale: .constant(1.8)) {
@@ -30,78 +28,77 @@ MagnifierView(isMagnifying: $isMagnifying, scale: .constant(1.8)) {
 .closeButtonColor(.white)
 ```
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+克隆本仓库，在 `Example` 文件夹执行 `pod install` 后在 `Xcode` 运行示例项目来查看 demo
 
-## Interfaces
+## 接口
 
-### Initialization
+### 初始化
 ``` swift
 init(
-    isMagnifying: Binding<Bool>,    // control the visibility
+    isMagnifying: Binding<Bool>,    // 控制可见性
     scale: Binding<CGFloat> = .constant(2.0),
     glassShape: AnyShape = AnyShape(RoundedRectangle(cornerRadius: 12.0)),
     @ViewBuilder _ content: () -> Content
 )
 ```
 
-### Methods for magnifying glass
+### 有关放大镜的方法
 ``` swift
-// Config the size of the magnifying glass
+// 调整放大镜的尺寸
 func magnifyingGlassSize(_ size: CGSize)
 
-// Config the shape of the magnifying glass
+// 设置放大镜的形状
 func magnifyingGlassShape(_ shape: AnyShape)
 
-// Set the scale of the handle width
+// 设置把柄的宽度比例（相对于放大镜的宽度）
 func handleWidthRatio(_ ratio: CGFloat)
 
-// Set the height of the handle
+// 设置把柄的高度
 func handleHeight(_ height: CGFloat)
 
-// Set the outline color of the magnifying glass
+// 设置放大镜的边框颜色
 func outlineColor(_ color: Color)
 
-// Set the outline width of the magnifying glass
+// 设置放大镜的边框宽度
 func outlineWidth(_ width: CGFloat)
 
-// Enable or disable interactions in the magnifying glass
+// 是否允许在放大镜内交互
 func enableHitInMagnifyingGlass(_ enabled: Bool)
 ```
 
-### Methods for mask
+### 有关 mask 的方法
 ``` swift
-// Set the background color of the mask
+// 设置 mask 的背景颜色
 func maskBackgroundColor(_ color: Color)
 
-// Set the size of the close button
+// 设置关闭按钮的尺寸
 func closeButtonSize(_ size: CGSize)
 
-// Set the foreground color of the close button
+// 设置关闭按钮的颜色
 func closeButtonColor(_ color: Color)
 
-// Enable or disable(or hide) close button
+// 是否显示关闭按钮
 func enableCloseButton(_ enabled: Bool)
 ```
 
-Execute Xcode's `Product > Build Documentation` and go to `SimpleMagnifyingView`'s documentation for more details.
+执行 Xcode 的 `Product > Build Documentation` 并前往文档中心来查看 `SimpleMagnifyingView` 的更多接口细节
 
-## Requirements
+## Swift 版本
 
 Swift >= 5.0
 
-## Installation
+## 安装方法
 
-SimpleMagnifyingView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+`SimpleMagnifyingView` 已在 [CocoaPods](https://cocoapods.org)发布。添加下列命令到你的 `Podfile` 来安装 `SimpleMagnifyingView`:
 
 ```ruby
 pod 'SimpleMagnifyingView'
 
-# Note that if cocoapods cannot find `SimpleMagnifyingView`, please try the command below
+# 注意：如果您的 pod 没找到 `SimpleMagnifyingView`, 请使用下面的命令重试
 # pod `SimpleMagnifyingView`, :git => 'https://github.com/Tomortec/SimpleMagnifyingView.git'
 ```
 
-## Author
+## 作者
 
 Tomortec, everything@tomortec.com
 

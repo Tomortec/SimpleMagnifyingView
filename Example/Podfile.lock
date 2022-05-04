@@ -1,0 +1,16 @@
+PODS:
+  - SimpleMagnifyingView (0.1.0)
+
+DEPENDENCIES:
+  - SimpleMagnifyingView (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleMagnifyingView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SimpleMagnifyingView: 9104fdaf551ad3d09a197f941ee161649ebc8453
+
+PODFILE CHECKSUM: b3acb0ee0745c0396a7416e64205290e6b8c35a6
+
+COCOAPODS: 1.11.0

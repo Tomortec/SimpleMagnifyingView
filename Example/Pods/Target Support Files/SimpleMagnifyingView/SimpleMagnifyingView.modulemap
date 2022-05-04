@@ -1,0 +1,6 @@
+framework module SimpleMagnifyingView {
+  umbrella header "SimpleMagnifyingView-umbrella.h"
+
+  export *
+  module * { export * }
+}
