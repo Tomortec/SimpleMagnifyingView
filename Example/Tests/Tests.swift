@@ -1,5 +1,4 @@
 import XCTest
-import SimpleMagnifyingView
 
 class Tests: XCTestCase {
     
