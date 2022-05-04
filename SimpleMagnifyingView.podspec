@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Tomortec' => 'everything@tomortec.com' }
   s.source           = { :git => 'https://github.com/Tomortec/SimpleMagnifyingView.git', :tag => s.version.to_s }
 
+  s.swift_version = '5.6'
   s.ios.deployment_target = '15.0'
 
   s.source_files = 'SimpleMagnifyingView/Classes/**/*'
