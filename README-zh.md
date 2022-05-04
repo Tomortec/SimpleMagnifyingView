@@ -1,19 +1,17 @@
 # SimpleMagnifyingView
 
-[![Version](https://img.shields.io/cocoapods/v/SimpleMagnifyingView.svg?style=flat)](https://cocoapods.org/pods/SimpleMagnifyingView)
-[![License](https://img.shields.io/cocoapods/l/SimpleMagnifyingView.svg?style=flat)](https://cocoapods.org/pods/SimpleMagnifyingView)
-[![Platform](https://img.shields.io/cocoapods/p/SimpleMagnifyingView.svg?style=flat)](https://cocoapods.org/pods/SimpleMagnifyingView)
-
-![Banner](./screenshot.png)
+<img src="./screenshot.png" alt="Banner" width="400">
 
 `SimpleMagnifyingView` 是用 SwiftUI 写的放大镜 🔍
 
-![Demo](./demo.gif)
-![Demo1](./demo-1.gif)
+<p float="left">
+    <img src="./demo.gif" alt="Demo" width="200"> 
+    <img src="./demo-1.gif" alt="Demo1" width="200">
+</p>
 
 ## 原理
 
-![HowItWorks](./how-it-works.png)
+<img src="./how-it-works.png" alt="How It Works" width="400">
 
 ## 小示例
 
