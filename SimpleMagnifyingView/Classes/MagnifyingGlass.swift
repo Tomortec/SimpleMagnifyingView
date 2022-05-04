@@ -15,8 +15,8 @@ struct MagnifyingGlass<S: Shape>: View {
     var outlineColor: Color = .gray
     var outlineWidth: CGFloat = 5.0
     
-    var handlerWidthRatio: CGFloat = 0.3
-    var handlerHeight: CGFloat = 15.0
+    var handleWidthRatio: CGFloat = 0.3
+    var handleHeight: CGFloat = 15.0
     
     @Binding var position: CGPoint
     @Binding var translation: CGVector
@@ -49,10 +49,16 @@ struct MagnifyingGlass<S: Shape>: View {
             .overlay(shape.size(size).stroke(outlineColor, lineWidth: outlineWidth))
             // handler
             .overlay(
-                RoundedRectangle(cornerRadius: handlerHeight / 2.0)
-                    .size(width: size.width * handlerWidthRatio, height: handlerHeight)
+                RoundedRectangle(cornerRadius: handleHeight / 2.0)
+                    .size(
+                        width: size.width * handleWidthRatio,
+                        height: handleHeight
+                    )
                     .fill(outlineColor)
-                    .position(x: size.width * (1.0 - handlerWidthRatio / 2.0), y: size.height * 1.5 - handlerHeight / 2.0)
+                    .position(
+                        x: size.width * (1.0 - handleWidthRatio / 2.0),
+                        y: size.height * 1.5 - handleHeight / 2.0
+                    )
             )
             .position(position)
             // drag gesture, see https://sarunw.com/posts/move-view-around-with-drag-gesture-in-swiftui/ for more info
@@ -86,6 +92,8 @@ struct MagnifyingGlass<S: Shape>: View {
                 
                 withAnimation {
                     translation = screenCenter - CGPoint(x: newPosition.x, y: newPosition.y + (hitBottom ? geometry.safeAreaInsets.bottom : 0.0))
+                    
+                    // clamp to screen
                     translation.dx = translation.dx.clamp(to: -1 * geometry.size.width / 2.0 ... geometry.size.width / 2.0)
                     translation.dy = translation.dy.clamp(to: -1 * geometry.size.height / 2.0 ... geometry.size.height / 2.0)
                 }

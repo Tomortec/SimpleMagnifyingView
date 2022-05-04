@@ -2,8 +2,8 @@
 //  UnexpectedResult.swift
 //  SimpleMagnifyingView_Example
 //
-//  Created by 李奥 on 2022/5/2.
-//  Copyright © 2022 CocoaPods. All rights reserved.
+//  Created by Tomortec on 2022/5/2.
+//  Copyright © 2022 Tomortec. All rights reserved.
 //
 
 import SwiftUI
@@ -14,6 +14,9 @@ struct UnexpectedResult1: View {
         MagnifierView(isMagnifying: .constant(true)) {
             VStack {
                 Text("Unexpected Result 1: Providing transparent background")
+                    .padding()
+                Text("Solution: \nProvide a `.frame(maxWidth: .infinity, maxHeight: .infinity).background(.white)` background (or other frame, but background is needed) for your views")
+                    .padding()
             }
         }
         .enableCloseButton(false)
@@ -25,6 +28,9 @@ struct UnexpectedResult2: View {
         MagnifierView(isMagnifying: .constant(true), scale: .constant(0.7)) {
             VStack {
                 Text("Unexpected Result 2: Providing a small scale (less than 1.0)")
+                    .padding()
+                Text("Solution: \n`Clamp` your scale passed")
+                    .padding()
             }
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -35,8 +41,20 @@ struct UnexpectedResult2: View {
     }
 }
 
-struct Previews: PreviewProvider {
-    static var previews: some View {
-        UnexpectedResult1()
+struct UnexpectedResult3: View {
+    var body: some View {
+        MagnifierView(isMagnifying: .constant(true)) {
+            VStack {
+                Text("Unexpected Result 3: Close button not working")
+                    .padding()
+                Text("Solution: \nYou can either call `.enableCloseButton(false)` method to hide close button or provide a Bool binding for `isMagnifying`")
+                    .padding()
+            }
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.cyan)
+        }
+        .outlineColor(.white)
+        .closeButtonColor(.white)
     }
 }

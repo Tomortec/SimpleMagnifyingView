@@ -12,7 +12,7 @@ import SwiftUI
  Create a magnifying glass which will magnify the views behind it
  
  Simple Example:
- ``` Swift
+ ``` swift
  MagnifierView(isMagnifying: .constant(true)) {
      Text("Hello world")
          .foregroundColor(.white)
@@ -36,8 +36,10 @@ public struct MagnifierView<Content: View>: View {
     
     /* MARK: - Appearance */
     var magnifyingGlassSize: CGSize = CGSize(width: 200.0, height: 200.0)
-    
     var magnifyingGlassShape: AnyShape
+    var glassHandleWidthRatio: CGFloat = 0.3
+    var glassHandleHeight: CGFloat = 15.0
+    
     var outlineColor: Color = .black
     var outlineWidth: CGFloat = 5.0
     
@@ -69,7 +71,7 @@ public struct MagnifierView<Content: View>: View {
         - glassShape: determines the shape of the magnifying glass. Note that the `Shape` passed should be wrapped by `AnyShape(_:)`. Default is `AnyShape(RoundedRectangle(cornerRadius: 12.0))`
         - content: the views to magnify. It's recommended that the `MagnifierView` be the first view of your `ContentView`'s `body`. Required
      
-     - important: the `MagnifierView` does not clamp the `scale`, which means if the `scale` is too small, the magnifying glass cannot hold the whole scaled `content` in it. Therefore, you may have to clamp the `scale` passed ( >= 1.0 ) when it's being modified.
+     - important: the `MagnifierView` does not clamp the `scale`, which means if the `scale` is too small, the magnifying glass cannot hold the whole scaled `content` in it. Therefore, you may have to clamp the `scale` passed ( >= 1.0 ) when it's being modified. Our `UnexpectedResult2` in the example demonstrates this.
      - note: when `isMagnifying` binding is set as `.constant(true)`, the `closeButton` does not work
      */
     public init(
@@ -151,6 +153,8 @@ public struct MagnifierView<Content: View>: View {
                     MagnifyingGlass(
                         size: magnifyingGlassSize,
                         shape: magnifyingGlassShape,
+                        handleWidthRatio: glassHandleWidthRatio,
+                        handleHeight: glassHandleHeight,
                         position: $position,
                         translation: $translation,
                         geometry: geometry,
@@ -191,6 +195,24 @@ extension MagnifierView {
     public func magnifyingGlassShape(_ shape: AnyShape) -> Self {
         var copied = self
         copied.magnifyingGlassShape = shape
+        return copied
+    }
+    
+    /// Set the scale of the handle width
+    ///
+    /// - note: this method receives `ratio`, while `.handleHeight(_:)` method receives absolute value
+    public func handleWidthRatio(_ ratio: CGFloat) -> Self {
+        var copied = self
+        copied.glassHandleWidthRatio = ratio
+        return copied
+    }
+    
+    /// Set the height of the handle
+    ///
+    /// - note: this method receives `absolute value`, while `.handleWidthRatio(_:)` receives ratio
+    public func handleHeight(_ height: CGFloat) -> Self {
+        var copied = self
+        copied.glassHandleHeight = height
         return copied
     }
     

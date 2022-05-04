@@ -2,41 +2,37 @@
 //  ContentView.swift
 //  SimpleMagnifyingView_Example
 //
-//  Created by 李奥 on 2022/4/28.
-//  Copyright © 2022 CocoaPods. All rights reserved.
+//  Created by Tomortec on 2022/4/28.
+//  Copyright © 2022 Tomortec. All rights reserved.
 //
 
 import SwiftUI
-import SimpleMagnifyingView
 
 struct ContentView: View {
     
-    @State var isShowingAlert = false
-    @State var scale: CGFloat = 2.0
-    @State var isMagnifying = true
+    init() {
+        UINavigationBar.appearance().tintColor = .black
+    }
     
     var body: some View {
-        MagnifierView(isMagnifying: $isMagnifying, scale: $scale) {
-            VStack {
-                Text("Hello world")
-                    .foregroundColor(.white)
-                Text("Scale: \(scale)")
-                Button("Enlarge") {
-                    withAnimation {
-                        scale += 0.1
-                    }
+        NavigationView {
+            List {
+                Section("Examples") {
+                    NavigationLink("Simple Example", destination: SimpleExample().ignoresSafeArea())
+                    NavigationLink("Complete Example", destination: CompleteExample().ignoresSafeArea())
                 }
-                Button("Reduce") {
-                    withAnimation {
-                        scale -= 0.1
-                    }
+                
+                Section("Unexpected Results") {
+                    NavigationLink("Transparent Background", destination: UnexpectedResult1())
+                    NavigationLink("Small Scale", destination: UnexpectedResult2())
+                    NavigationLink("Not-working Close Button", destination: UnexpectedResult3())
                 }
+                
+                Text("*For more details, please build and go to our documentation*")
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.cyan)
+            .navigationTitle("Example")
         }
-        .outlineColor(.white)
-        .closeButtonColor(.white)
+        .navigationViewStyle(.columns)
     }
 }
 

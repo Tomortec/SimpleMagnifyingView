@@ -11,6 +11,8 @@
 		0DE60940281AA70E00309869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6093F281AA70E00309869 /* ContentView.swift */; };
 		0DE60942281AA73300309869 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE60941281AA73300309869 /* ExampleApp.swift */; };
 		0DE60944281AA78E00309869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE60943281AA78E00309869 /* Main.storyboard */; };
+		0DF5823B28225B8E00CD64C1 /* SimpleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5823A28225B8E00CD64C1 /* SimpleExample.swift */; };
+		0DF5823D28225F0300CD64C1 /* CompleteExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5823C28225F0300CD64C1 /* CompleteExample.swift */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7B87B2D225FF4CEF3B80A083 /* Pods_SimpleMagnifyingView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5940F084A0AB51A55C1BC /* Pods_SimpleMagnifyingView_Tests.framework */; };
 		B825976A62FDEAE911770DDA /* Pods_SimpleMagnifyingView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3713C9DAB6AFFEC356779A /* Pods_SimpleMagnifyingView_Example.framework */; };
@@ -32,6 +34,8 @@
 		0DE60941281AA73300309869 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		0DE60943281AA78E00309869 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0DE60945281AA97700309869 /* SimpleMagnifyingView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleMagnifyingView-Bridging-Header.h"; sourceTree = "<group>"; };
+		0DF5823A28225B8E00CD64C1 /* SimpleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExample.swift; sourceTree = "<group>"; };
+		0DF5823C28225F0300CD64C1 /* CompleteExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteExample.swift; sourceTree = "<group>"; };
 		18F5940F084A0AB51A55C1BC /* Pods_SimpleMagnifyingView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMagnifyingView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3713C9DAB6AFFEC356779A /* Pods_SimpleMagnifyingView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMagnifyingView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SimpleMagnifyingView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMagnifyingView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,8 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				0DE60945281AA97700309869 /* SimpleMagnifyingView-Bridging-Header.h */,
 				0DAD357F282009E80055E172 /* UnexpectedResult.swift */,
+				0DF5823A28225B8E00CD64C1 /* SimpleExample.swift */,
+				0DF5823C28225F0300CD64C1 /* CompleteExample.swift */,
 			);
 			name = "Example for SimpleMagnifyingView";
 			path = SimpleMagnifyingView;
@@ -330,9 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF5823B28225B8E00CD64C1 /* SimpleExample.swift in Sources */,
 				0DE60942281AA73300309869 /* ExampleApp.swift in Sources */,
 				0DE60940281AA70E00309869 /* ContentView.swift in Sources */,
 				0DAD3580282009E80055E172 /* UnexpectedResult.swift in Sources */,
+				0DF5823D28225F0300CD64C1 /* CompleteExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
